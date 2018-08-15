@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.example.mybatis.dao.mapper.IUserDao">
+    <select id="findUserAll" resultMap="UserMap">
+        SELECT * FROM user;
+    </select>
+
+
+    <!--<insert id="addUser" useGeneratedKeys="true" keyProperty="userId" parameterType="nonda.cardata.collector.model.UserInfo">-->
+    <!--insert into user_login(user_id,user_age,user_name,add_time,is_delete)-->
+    <!--values(#{userId},#{userAge},#{userName},#{addTime},#{isDelete})-->
+    <!--</insert>-->
+
+    <!--<update id="delUser" parameterType="nonda.cardata.collector.model.UserInfo">-->
+    <!--update user_login set is_delete=0 WHERE user_id=#{uid}-->
+    <!--</update>-->
+
+    <resultMap id="UserMap" type="com.example.mybatis.model.User">
+        <id property="id" column="id"></id>
+        <result property="userName" column="username"></result>
+    </resultMap>
+</mapper>
